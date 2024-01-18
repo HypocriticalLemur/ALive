@@ -59,6 +59,14 @@ class Game:
         quit = False
         iteration = 0
         while not quit:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                        quit = True
+                # if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                #         is_blue = not is_blue
+            
+            pressed = pygame.key.get_pressed()
+            if pressed[pygame.K_ESCAPE]: quit = True
             # pressed = pygame.key.get_pressed()
             # if pressed[pygame.K_ESCAPE]: pygame.quit()
             self.clock.tick(self.fps)
